@@ -1,0 +1,22 @@
+# 16
+# https://www.hackerrank.com/challenges/caesar-cipher-1/problem
+
+def caesarCipher(s, k):
+    result = ""
+    k %= 26
+
+    for ch in s:
+        if 'a' <= ch <= 'z':
+            result += chr((ord(ch) - ord('a') + k) % 26 + ord('a'))
+        elif 'A' <= ch <= 'Z':
+            result += chr((ord(ch) - ord('A') + k) % 26 + ord('A'))
+        else:
+            result += ch
+
+    return result
+
+n = int(input())
+s = input()
+k = int(input())
+
+print(caesarCipher(s, k))
